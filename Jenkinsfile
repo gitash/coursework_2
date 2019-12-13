@@ -1,6 +1,7 @@
 node{
     def scannerHome = tool 'SonarQubeScanner';
     def app
+    def remote = [:]
     remote.name = 'prod-node'
     remote.host = '40.71.251.3'
     remote.user = 'master'
