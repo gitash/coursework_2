@@ -1,0 +1,28 @@
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+
+  vars:
+    myResourceGroup: ansible
+    myVnet: prod-node-vnet
+    mySubnet: prod-node-subnet
+    myPublicIP: prod-node-publicip
+    myNIC: prod-node-nic
+    myNetworkSecurityGroup: prod-node-nsg
+    myVM: prod-node
+    mySSHkey: ssh-rsa QDu9TJEq4CSVZVmVN0qhd5Uwd9JsQdHCto7LRabLQS/XijPxKzMTlngQWZ784INWGTBt1kz0QJYfHJz78/aq8+3bDxz1jg/vVl/6+RxS/UI5F5k+$
+
+  tasks:
+
+  - name: Create New Port
+    azure_rm_securitygroup:
+      resource_group: "{{ myResourceGroup}}"
+      name: "{{ myNetworkSecurityGroup }}"
+      rules:
+        - name: SSH
+          protocol: Tcp
+          destination_port_range: 80
+          access: Allow
+          priority: 1003
+          direction: Inbound
+

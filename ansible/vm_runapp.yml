@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coursework2
+  labels:
+    app: coursework2
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: coursework2
+  template:
+    metadata:
+      labels:
+        app: coursework2
+    spec:
+      containers:
+        - name: coursework2
+          image: docker.io/dockasher/coursework2:latest
+          ports:
+            - containerPort: 8080
