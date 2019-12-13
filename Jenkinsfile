@@ -2,11 +2,6 @@ pipeline {
     agent any
     stages {
 
-    stage('Clone repository') {
-        
-        checkout scm
-    }
-    
     stage('Sonarqube') {
     environment {
         scannerHome = tool 'SonarQubeScanner'
@@ -22,8 +17,6 @@ pipeline {
 }
 
     stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
 
         app = docker.build("dockasher/coursework2")
     }
