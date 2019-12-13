@@ -16,6 +16,7 @@ node{
     stage('SonarQube Analysis') {
         withSonarQubeEnv('SonarQubeScanner') { 
             sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectName=coursework_2 -Dsonar.projectKey=coursework_2:app -Dsonar.sources=."
+            //docs.sonarqube.com
         }
     }
     
