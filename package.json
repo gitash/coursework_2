@@ -1,21 +1,21 @@
 {
-  "name": "getintodevops-hellonode",
+  "name": "gitash-coursework2",
   "version": "1.0.0",
-  "description": "A Hello World HTTP server",
-  "main": "main.js",
+  "description": "A simple application",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getintodevops/hellonode/"
+    "url": "https://github.com/gitash/coursework2/"
   },
   "keywords": [
     "node",
     "docker",
     "dockerfile"
   ],
-  "author": "miiro@getintodevops.com",
+  "author": "amacdo217@caledonian.ac.uk",
   "license": "ISC"
 }
