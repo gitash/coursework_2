@@ -1,2 +1,3 @@
 # coursework_2
-Branch for development for Coursework2
+Repo for DevOps Coursework 2 - GCU - 19/20
+
