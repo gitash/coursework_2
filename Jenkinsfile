@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    stages {
+        stages {
 
-    stage('Sonarqube') {
+stage('Sonarqube') {
     environment {
         scannerHome = tool 'SonarQubeScanner'
     }
@@ -15,7 +15,10 @@ pipeline {
         }
     }
 }
-
+node {
+    def app
+    
+    
     stage('Build image') {
 
         app = docker.build("dockasher/coursework2")
@@ -34,5 +37,6 @@ pipeline {
             app.push("latest")
         }
     }
+}
 }
 }
